@@ -14,4 +14,7 @@ I had 2 big initial ideas, which are using IMU(Inertial Measurement Unit) sensor
 ## Implementation:
 Explain your process of prototype development including all applicable aspects such as hardware (electronics), firmware (arduino code), software (p5.js or other code), integrations (Adafruit IO, IFTTT, Arduino IoT cloud, etc.), enclosure and mechanical design. Use a separate subheader for each part:
 ### Hardware(Electronics):
+Things I used: M5 Stack board, M5 Extension, IMU(Inertial Measurement Unit) sensors, Strap, USB C-C cable, Tape.  
+![IMU_hardware](https://user-images.githubusercontent.com/118408939/207998460-e69c7d56-b344-42b0-88ba-bc0b7a962c9d.jpg)
+![装着イメージ](https://user-images.githubusercontent.com/118408939/207998802-88e010ef-d50f-4f1b-b14f-6222d2ac0eec.jpg)
 
