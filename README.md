@@ -22,7 +22,7 @@ Things I used: M5 Stack board, M5 Extension, IMU(Inertial Measurement Unit) sens
 I'm getting Accelerometer x,y,x and gyro x,y,z from the IMU sensor to control Force Vectors in p5.js.
 ### Software:
 [p5.js sketch](https://editor.p5js.org/tharuyama/sketches/hRd596Xwx)
-The code below enables me to control different force vectors smoothly. This is where it took me a while to figure out. I had no idea that the IMU sensor  has defined directions. And it was hard to set the specific value differences.
+The code below enables me to control different force vectors smoothly. This is where it took me a while to figure out. It was hard to set the specific value ranges. I ended up having the nested conditions and the minimum, maximum range of 2 values in the array. Also, I had no idea that the IMU sensor has defined directions, so I was confused to get the specific values.
 ```
 // Store values into arrays
 accXData[dataCounterx] = accX;  
@@ -40,7 +40,7 @@ else
 
 //Push Right
 if (accXData[i] > 5){
-  if (0< accXData[i] - accXData[i-1] < 2){
+  if (0 < accXData[i] - accXData[i-1] < 2){
       for (let j = 0; j<num; j++){
         console.log('Right');
         particles[j].addForceA();
@@ -70,11 +70,17 @@ addForceA(){
 ```
 ### Enclosure:
 ![装着イメージ](https://user-images.githubusercontent.com/118408939/207998802-88e010ef-d50f-4f1b-b14f-6222d2ac0eec.jpg)
+
 ## Project outcome:
 I was able to create the Finger Interaction(control my sketch with a finger), which I wanted to do. And I'm happy with the final visual.
 
 *Find a video in a folder.*
 
+## Conclusion:
+At first, I was planning to use a finger to draw a new sketch on a canvas. However, during my time with the IMU sensor, I found it very difficult to control a sketch as the IMU sensor just detects accelerometer x,y,z and gyro x,y,z, not the locations. And realized that I should have used a capacitive sensor for that concept as it detects x,y,z locations of my hand. As for next steps, I would study and use TensorFlow to detect specific gestures to control my sketch in a more interesting way.
 
+## Project references:
+https://www.youtube.com/watch?v=fBqaA7zRO58
+A book - Processing, Creative Coding by Atsushi Tadokoro
 
 
