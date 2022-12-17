@@ -80,6 +80,9 @@ addForceA(){
 I was able to create the Finger Interaction(control my sketch with a finger), which I wanted to do. And I'm happy with the final visual.
 
 *Find a video in a folder.*
+<img width="1440" alt="Screenshot 2022-12-16 at 13 28 18" src="https://user-images.githubusercontent.com/118408939/208256616-396337e6-6f6c-476f-8cc5-2c2e43e2a19a.png">
+<img width="1440" alt="Screenshot 2022-12-16 at 02 56 10" src="https://user-images.githubusercontent.com/118408939/208256623-8df72d7d-38b2-47af-af8e-c45fdc5c0426.png">
+
 
 ## Conclusion:
 At first, I was planning to use a finger to draw a new sketch on a canvas. However, during my time with the IMU sensor, I found it very difficult to control a sketch as the IMU sensor just detects accelerometer x,y,z and gyro x,y,z, not the locations. And realized that I should have used a capacitive sensor for that concept as it detects x,y,z locations of my hand. As for next steps, I would study and use TensorFlow to detect specific gestures to control my sketch in a more interesting way.
