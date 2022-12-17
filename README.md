@@ -13,16 +13,21 @@ I had 2 big initial ideas, which are using IMU(Inertial Measurement Unit) sensor
 
 ## Implementation:
 Explain your process of prototype development including all applicable aspects such as hardware (electronics), firmware (arduino code), software (p5.js or other code), integrations (Adafruit IO, IFTTT, Arduino IoT cloud, etc.), enclosure and mechanical design. Use a separate subheader for each part:
+
 ### Hardware(Electronics):
 Things I used: M5 Stack board, M5 Extension, IMU(Inertial Measurement Unit) sensors, Strap, USB C-C cable, Tape.  
 ![IMU_hardware](https://user-images.githubusercontent.com/118408939/207998460-e69c7d56-b344-42b0-88ba-bc0b7a962c9d.jpg)
 ![IMU_sensor_bb](https://user-images.githubusercontent.com/118408939/208061272-6aee2e29-3814-433c-a484-9d3e189ed4b9.jpg)
+
 ### Firmware:
 [Arduino file](https://create.arduino.cc/editor/taiga12/88f52f17-0aa0-4d80-be52-31f066dd38c8)
-I'm getting Accelerometer x,y,x and gyro x,y,z from the IMU sensor to control Force Vectors in p5.js.
+
+I'm getting Accelerometer x,y,z and gyro x,y,z from the IMU sensor to control Force Vectors in p5.js.
+
 ### Software:
 [p5.js sketch](https://editor.p5js.org/tharuyama/sketches/hRd596Xwx)
-The code below enables me to control different force vectors smoothly. This is where it took me a while to figure out. I had no idea that the IMU sensor  has defined directions. And it was hard to set the specific value differences.
+
+The code below enables me to control different force vectors smoothly. This is where it took me a while to figure out. It was hard to set the specific value ranges. I ended up having the nested conditions and the minimum, maximum range of 2 values in the array. Also, I had no idea that the IMU sensor has defined directions, so I was confused to get the specific values.
 ```
 // Store values into arrays
 accXData[dataCounterx] = accX;  
@@ -40,7 +45,7 @@ else
 
 //Push Right
 if (accXData[i] > 5){
-  if (0< accXData[i] - accXData[i-1] < 2){
+  if (0 < accXData[i] - accXData[i-1] < 2){
       for (let j = 0; j<num; j++){
         console.log('Right');
         particles[j].addForceA();
@@ -70,11 +75,18 @@ addForceA(){
 ```
 ### Enclosure:
 ![装着イメージ](https://user-images.githubusercontent.com/118408939/207998802-88e010ef-d50f-4f1b-b14f-6222d2ac0eec.jpg)
+
 ## Project outcome:
 I was able to create the Finger Interaction(control my sketch with a finger), which I wanted to do. And I'm happy with the final visual.
 
 *Find a video in a folder.*
 
+## Conclusion:
+At first, I was planning to use a finger to draw a new sketch on a canvas. However, during my time with the IMU sensor, I found it very difficult to control a sketch as the IMU sensor just detects accelerometer x,y,z and gyro x,y,z, not the locations. And realized that I should have used a capacitive sensor for that concept as it detects x,y,z locations of my hand. As for next steps, I would study and use TensorFlow to detect specific gestures to control my sketch in a more interesting way.
 
+## Project references:
+https://www.youtube.com/watch?v=fBqaA7zRO58
+
+A book - Processing, Creative Coding by Atsushi Tadokoro
 
 
