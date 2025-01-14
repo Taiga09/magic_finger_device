@@ -1,4 +1,5 @@
-# IXD256_final_taigaH, FA'22, 12/14/22
+# Magic Finber, Interactive Device with p5.js
+IXD256_final_taigaH, FA'22, 12/14/22
 IMU sensor with p5.js
 
 ## Final Project Description: 
